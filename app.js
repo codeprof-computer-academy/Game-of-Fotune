@@ -1,3 +1,5 @@
+
+// target all the required DOM elements
 let get_started = document.querySelector('.get-started')
 let start_btn = document.querySelector('.start')
 let game_env = document.querySelector('.game-env')
@@ -5,8 +7,53 @@ let get_started_form = document.querySelector('form')
 let play_btn = document.querySelector('.play')
 let menu_btn = document.querySelector('.menu');
 let play_again_btn = document.querySelector('.play-again');
+let theme_btn = document.querySelector('.theme-btn');
+let theme_ball = document.querySelector('.theme-ball');
 
+// hiding the play again button
 play_again_btn.style.display = "none"
+
+// adding animation to the theme-btn (sliding left to right )
+theme_btn.addEventListener('click', (e)=>{
+     e.preventDefault();
+     theme_ball.classList.toggle('move-right')
+    //  target header
+    document.querySelector('header').classList.toggle('dark-theme')
+
+     //  target nav
+     document.querySelector('nav').classList.toggle('dark-theme-nav')
+
+       //  target menu icon
+       document.querySelector('.menu').classList.toggle('inverter')
+    // target main
+    document.querySelector('main').classList.toggle('dark-theme')
+
+    // target game environment
+    document.querySelector('.game-env').classList.toggle('dark-theme-nav')
+
+        // target player numbers basket
+        document.querySelector('.player-numbers-basket').classList.toggle('dark-theme')
+
+          // target lucky numbers basket
+          document.querySelector('.lucky-numbers-basket').classList.toggle('dark-theme')
+
+           // target prize box
+           document.querySelector('.prize').classList.toggle('dark-theme-prize')
+
+    // target footer
+    document.querySelector('footer').classList.toggle('dark-theme')
+
+    // target footer
+    let a_tags =  document.querySelectorAll('a')
+      a_tags.forEach((a_tag)=>{
+          a_tag.classList.toggle('dark-theme-link')
+
+    })
+
+})
+
+
+
 
 
 // show nav menu 

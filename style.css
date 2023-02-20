@@ -19,14 +19,14 @@ header{
     width: 100%;
     padding: 10px 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background-color: white;
-    height: 120px;
+    min-height: 120px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
     z-index: 100;
     position: fixed;
+    transition: background-color .7s ease;
 }
 
 .logo{
@@ -38,12 +38,17 @@ header{
     
 }
 
+
+
 nav{
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 10px 0;
+    padding: 10px 30px;
+    border-radius: 30px;
+    
 
 }
 
@@ -63,6 +68,32 @@ nav a:hover{
     border-top:2px solid crimson;
 }
 
+/* switch-theme button */
+.theme-btn{
+    width: 40px;
+    height: 20px;
+    border:1px solid #333;
+    border-radius: 20px;
+    background-color: #333;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.theme-ball{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: crimson;
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    transition: left 0.7s ease;
+
+}
+
+
 .menu{
     display: none;
 }
@@ -72,9 +103,11 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    background-color: white;
     align-items: center;
     min-height: calc(100vh - 170px);
     margin-top: 120px;
+    transition: background-color .7s ease;
     
 }
 
@@ -321,6 +354,7 @@ main .register{
 }
 
 footer{
+    
     width: 100%;
     display: flex;
     justify-content: center;
@@ -328,6 +362,7 @@ footer{
     padding: 10px;
     height: 50px;
     background-color: whitesmoke;
+    transition: background-color .7s ease;
   
 }
 
@@ -368,6 +403,8 @@ footer p{
         border-radius: 50%;
         
     }
+
+  
     
     nav{
         width: 100%;
@@ -379,10 +416,11 @@ footer p{
         background-color: white;
         position: absolute;
         left:-100%;
-        top:60px;
+        top:110px;
         padding: 20px;
         gap:20px;
         transition: left .5s ease-in-out;
+        border-radius: 0px;
         
     }
     
@@ -393,9 +431,14 @@ footer p{
         text-transform: uppercase;
     }
 
+
+
     .menu{
         display: block;
-       
+    }
+
+    .inverter{
+        filter: invert(1);
     }
 
     .show{
@@ -524,7 +567,7 @@ footer p{
         background-color: rgb(137, 76, 1);
     }
     
-    .form-container .game-env{
+    .game-env{
         width: 100%;
         border:1px solid green;
         margin-top: 20px;
@@ -650,6 +693,30 @@ footer p{
     
 
 }
+
+/* controller classes */
+.move-right{
+    left:19px;
+}
+
+.dark-theme{
+    background-color: #222;
+    color:white;
+}
+
+.dark-theme-nav{
+    background-color: #111;
+    color:white;
+}
+
+.dark-theme-link{
+    color:white;
+}
+
+.dark-theme-prize{
+    background-color: black;
+}
+
 
 @keyframes play_btn{
     from{
